@@ -20,8 +20,70 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Particles.js Script -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: "#ffffff" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5, random: true },
+          size: { value: 3, random: true },
+          line_linked: { enable: false },
+          move: { enable: true, speed: 2, direction: "none", out_mode: "out" }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "repulse" },
+            onclick: { enable: true, mode: "push" }
+          },
+          modes: {
+            repulse: { distance: 100, duration: 0.4 },
+            push: { particles_nb: 4 }
+          }
+        },
+        retina_detect: true
+      });
+
+      // Scroll reveal sections
+      const sections = document.querySelectorAll("main section");
+      const options = {
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        });
+      }, options);
+
+      sections.forEach(section => {
+        section.classList.add("invisible");
+        observer.observe(section);
+      });
+    });
+  </script>
+  <style>
+    .invisible {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body>
+  <div id="particles-js" style="position: fixed; width: 100%; height: 100%; z-index: -1;"></div>
+
   <nav class="top-nav">
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
@@ -52,64 +114,66 @@
     </div>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m a passionate Data Scientist with an academic foundation in advanced analytics and a strong inclination towards solving real-world problems. My journey in data science began with a fascination for decoding patterns in everyday systems—from market trends to social behaviors. Over time, I’ve built scalable ML models, automated pipelines, and crafted dashboards that tell compelling data-driven stories.</p>
-    <p>Most recently, I’ve worked on risk forecasting in financial domains, real-time comment moderation using NLP, and anomaly detection in regulatory workflows. My projects are a reflection of both technical rigor and design empathy—focusing not just on accuracy, but also interpretability and user experience. I'm eager to bring this mindset to roles that require analytical problem-solving, collaboration, and continuous learning.</p>
-  </section>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I’m a passionate Data Scientist with an academic foundation in advanced analytics and a strong inclination towards solving real-world problems. My journey in data science began with a fascination for decoding patterns in everyday systems—from market trends to social behaviors. Over time, I’ve built scalable ML models, automated pipelines, and crafted dashboards that tell compelling data-driven stories.</p>
+      <p>Most recently, I’ve worked on risk forecasting in financial domains, real-time comment moderation using NLP, and anomaly detection in regulatory workflows. My projects are a reflection of both technical rigor and design empathy—focusing not just on accuracy, but also interpretability and user experience. I'm eager to bring this mindset to roles that require analytical problem-solving, collaboration, and continuous learning.</p>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-card">
-      <h3>Revenue Forecasting & Regulatory Insights</h3>
-      <p>Modeled 145K+ payment records to forecast revenue with 92% accuracy. Deployed 4+ dashboards and anomaly alerts to accelerate compliance insights.</p>
-      <p><strong>Tech:</strong> XGBoost, Streamlit, Tableau</p>
-    </div>
-    <div class="project-card">
-      <h3>Stock Volatility Risk Simulation</h3>
-      <p>Simulated synthetic trade risks across 100K+ scenarios using agentic workflows. Improved inference latency by 38% and reduced risk propagation by 40%.</p>
-      <p><strong>Tech:</strong> Python, Docker, SHAP, Streamlit</p>
-    </div>
-    <div class="project-card">
-      <h3>Spelling Error Clustering for Transaction Cleaning</h3>
-      <p>Clustered 50K+ anomalies using unsupervised BERT + autoencoders to clean transaction logs. Boosted downstream data integrity by 30%.</p>
-      <p><strong>Tech:</strong> BERT, Autoencoder, LLMs</p>
-    </div>
-    <div class="project-card">
-      <h3>Toxic Comment Moderation Pipeline</h3>
-      <p>Built a multi-layered moderation tool using BERT. Reduced content review time by 30% and increased moderation coverage by 20%.</p>
-      <p><strong>Tech:</strong> Hugging Face, Transformers, Flask</p>
-    </div>
-    <div class="project-card">
-      <h3>Crime Trend Monitoring & Risk Alerts</h3>
-      <p>Processed 1M+ event records to identify clusters and trigger incident alerts. Reduced planning delay by 25% through visual dashboards.</p>
-      <p><strong>Tech:</strong> PySpark, MLlib, Pandas</p>
-    </div>
-  </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-card">
+        <h3>Revenue Forecasting & Regulatory Insights</h3>
+        <p>Modeled 145K+ payment records to forecast revenue with 92% accuracy. Deployed 4+ dashboards and anomaly alerts to accelerate compliance insights.</p>
+        <p><strong>Tech:</strong> XGBoost, Streamlit, Tableau</p>
+      </div>
+      <div class="project-card">
+        <h3>Stock Volatility Risk Simulation</h3>
+        <p>Simulated synthetic trade risks across 100K+ scenarios using agentic workflows. Improved inference latency by 38% and reduced risk propagation by 40%.</p>
+        <p><strong>Tech:</strong> Python, Docker, SHAP, Streamlit</p>
+      </div>
+      <div class="project-card">
+        <h3>Spelling Error Clustering for Transaction Cleaning</h3>
+        <p>Clustered 50K+ anomalies using unsupervised BERT + autoencoders to clean transaction logs. Boosted downstream data integrity by 30%.</p>
+        <p><strong>Tech:</strong> BERT, Autoencoder, LLMs</p>
+      </div>
+      <div class="project-card">
+        <h3>Toxic Comment Moderation Pipeline</h3>
+        <p>Built a multi-layered moderation tool using BERT. Reduced content review time by 30% and increased moderation coverage by 20%.</p>
+        <p><strong>Tech:</strong> Hugging Face, Transformers, Flask</p>
+      </div>
+      <div class="project-card">
+        <h3>Crime Trend Monitoring & Risk Alerts</h3>
+        <p>Processed 1M+ event records to identify clusters and trigger incident alerts. Reduced planning delay by 25% through visual dashboards.</p>
+        <p><strong>Tech:</strong> PySpark, MLlib, Pandas</p>
+      </div>
+    </section>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <h3>Application Development Analyst – Accenture</h3>
-    <p>Jul 2021 – Jun 2022</p>
-    <ul>
-      <li>Automated 100K+ ServiceNow API logs, reducing SLA violations by 40%</li>
-      <li>Developed 3+ real-time dashboards for tracking 10K+ records/month</li>
-      <li>Simulated root causes for 3K+ incidents, cutting system failure repetition by 22%</li>
-      <li>Collaborated with 6 global teams across time zones to improve traceability by 30%</li>
-      <li>Recognized in top 5% new analysts for impact-driven automation delivery</li>
-    </ul>
-  </section>
+    <section id="experience">
+      <h2>Experience</h2>
+      <h3>Application Development Analyst – Accenture</h3>
+      <p>Jul 2021 – Jun 2022</p>
+      <ul>
+        <li>Automated 100K+ ServiceNow API logs, reducing SLA violations by 40%</li>
+        <li>Developed 3+ real-time dashboards for tracking 10K+ records/month</li>
+        <li>Simulated root causes for 3K+ incidents, cutting system failure repetition by 22%</li>
+        <li>Collaborated with 6 global teams across time zones to improve traceability by 30%</li>
+        <li>Recognized in top 5% new analysts for impact-driven automation delivery</li>
+      </ul>
+    </section>
 
-  <section id="certifications">
-    <h2>Certifications & Achievements</h2>
-    <ul>
-      <li>Supervised Machine Learning – Stanford/DeepLearning.AI (In Progress)</li>
-      <li>Career Skills in Data Analytics – LinkedIn Learning</li>
-      <li>Top 20% – Meta Kaggle Hackathon (1,200+ participants)</li>
-      <li>Volunteer Analyst – Animal Rescue NGO</li>
-      <li>Digital Strategy Lead – MUN Leadership Team</li>
-    </ul>
-  </section>
+    <section id="certifications">
+      <h2>Certifications & Achievements</h2>
+      <ul>
+        <li>Supervised Machine Learning – Stanford/DeepLearning.AI (In Progress)</li>
+        <li>Career Skills in Data Analytics – LinkedIn Learning</li>
+        <li>Top 20% – Meta Kaggle Hackathon (1,200+ participants)</li>
+        <li>Volunteer Analyst – Animal Rescue NGO</li>
+        <li>Digital Strategy Lead – MUN Leadership Team</li>
+      </ul>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 Wanshika Patro | Built with 💻 and ☕</p>

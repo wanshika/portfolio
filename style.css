@@ -7,6 +7,19 @@ body {
   background-size: 20px 20px;
 }
 
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 .top-nav {
   display: flex;
   justify-content: center;
@@ -90,7 +103,7 @@ body {
 section {
   padding: 2rem 1rem 1rem;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 40px auto;
 }
 
 h2 {
@@ -125,4 +138,15 @@ footer {
 
 ul li {
   margin-bottom: 0.5rem;
+}
+
+.invisible {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
