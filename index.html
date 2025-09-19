@@ -51,10 +51,7 @@
 
       // Scroll reveal sections
       const sections = document.querySelectorAll("main section");
-      const options = {
-        threshold: 0.1
-      };
-
+      const options = { threshold: 0.1 };
       const observer = new IntersectionObserver(function (entries, observer) {
         entries.forEach(entry => {
           if (!entry.isIntersecting) return;
@@ -117,9 +114,10 @@
   <main>
     <section id="about">
       <h2>About Me</h2>
-      <p>I’m a passionate Data Scientist with an academic foundation in advanced analytics and a strong inclination towards solving real-world problems. My journey in data science began with a fascination for decoding patterns in everyday systems—from market trends to social behaviors. Over time, I’ve built scalable ML models, automated pipelines, and crafted dashboards that tell compelling data-driven stories.</p>
-      <p>Most recently, I’ve worked on risk forecasting in financial domains, real-time comment moderation using NLP, and anomaly detection in regulatory workflows. My projects are a reflection of both technical rigor and design empathy—focusing not just on accuracy, but also interpretability and user experience. I'm eager to bring this mindset to roles that require analytical problem-solving, collaboration, and continuous learning.</p>
+      <p>I’m a Data Scientist with 3+ years of experience in analysis, machine learning, and building scalable data pipelines. My journey in data science began with a fascination for decoding patterns in everyday systems—from market trends to social behaviors. Over time, I’ve deployed ML models, automated workflows, and crafted dashboards that support impactful business decisions.</p>
+      <p>Most recently, I’ve worked on risk forecasting in financial domains, real-time comment moderation using NLP, and anomaly detection in regulatory workflows. My projects combine technical rigor with design empathy—focusing not just on accuracy, but also interpretability and user experience. I aim to bring this mindset to roles that require analytical problem-solving, collaboration, and continuous learning.</p>
     </section>
+
 
     <section id="projects">
       <h2>Projects</h2>
@@ -150,17 +148,49 @@
       </div>
     </section>
 
+    <!-- UPDATED EXPERIENCE SECTION -->
     <section id="experience">
       <h2>Experience</h2>
-      <h3>Application Development Analyst – Accenture</h3>
-      <p>Jul 2021 – Jun 2022</p>
-      <ul>
-        <li>Automated 100K+ ServiceNow API logs, reducing SLA violations by 40%</li>
-        <li>Developed 3+ real-time dashboards for tracking 10K+ records/month</li>
-        <li>Simulated root causes for 3K+ incidents, cutting system failure repetition by 22%</li>
-        <li>Collaborated with 6 global teams across time zones to improve traceability by 30%</li>
-        <li>Recognized in top 5% new analysts for impact-driven automation delivery</li>
-      </ul>
+
+      <div class="experience-card">
+        <h3>Graduate Data Analyst — University at Buffalo</h3>
+        <p>Buffalo, NY • May 2024 – May 2025</p>
+        <ul>
+          <li>Cleaned and transformed 120K+ student and resource records, improving reporting accuracy by 20%.</li>
+          <li>Built 4 dashboards for KPIs, reducing manual reporting time by 25%.</li>
+          <li>Analyzed 10+ departmental datasets to identify trends supporting faculty decisions.</li>
+        </ul>
+      </div>
+
+      <div class="experience-card">
+        <h3>Business Data Analyst — Somnath Stone Products</h3>
+        <p>Odisha, India • Jul 2022 – Jan 2024</p>
+        <ul>
+          <li>Built pipelines processing 10K+ monthly records, improving demand planning accuracy by 20%.</li>
+          <li>Designed 5+ dashboards to track KPIs, reducing reporting time by 30%.</li>
+          <li>Conducted demand analysis that enabled 2 new market expansions.</li>
+        </ul>
+      </div>
+
+      <div class="experience-card">
+        <h3>Data Analyst — Application Development (Accenture)</h3>
+        <p>Pune, India • Jul 2021 – Jun 2022</p>
+        <ul>
+          <li>Processed 100K+ logs with SQL/Python, improving triage accuracy by 25%.</li>
+          <li>Automated 10+ workflows, reducing manual resolution time by 40%.</li>
+          <li>Built SLA/KPI dashboards, cutting incident delays by 20%.</li>
+        </ul>
+      </div>
+
+      <div class="experience-card">
+        <h3>Data Analyst — Operations & Reporting (Essfour Eng. Pvt. Ltd.)</h3>
+        <p>Surat, India • May 2020 – Jun 2021</p>
+        <ul>
+          <li>Cleaned and integrated 50K+ production/procurement records, increasing reporting accuracy by 25%.</li>
+          <li>Built dashboards to track material usage and delivery timelines, reducing planning errors by 15%.</li>
+          <li>Collaborated with engineers to implement data-driven tracking, contributing to a 10% reduction in project delays.</li>
+        </ul>
+      </div>
     </section>
 
     <section id="certifications">
